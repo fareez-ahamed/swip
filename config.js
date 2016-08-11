@@ -23,7 +23,7 @@ module.exports = {
 	},
 
 	setProxy : function(name, object) {
-		this.configObj[name] = object;
+		this.configObj.proxies[name] = object;
 	},
 
 	getProxy : function(name) {

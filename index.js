@@ -26,7 +26,10 @@ program
   .command('add <name>')
   .description('Add a new proxy')
   .action(function(name, options){
-  	
+    prompt.get(['http-proxy','https-proxy'],function(err, result){
+    	config.setProxy(name,result);
+    	config.save();
+    });
   });
 
 //Start parsing the argument
