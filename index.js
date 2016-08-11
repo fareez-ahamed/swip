@@ -1,19 +1,32 @@
 const program = require('commander');
-const inquirer = require('inquirer');
+const prompt  = require('prompt');
+const config  = require('./config');
+
+loadConfig();
 
 program
-  .version('0.0.1')
-  .option('-p, --peppers', 'Add peppers')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq-sauce', 'Add bbq sauce')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble');
+  .version('0.0.1');
 
+/**
+ *	Add a new proxy by giving a name
+ */
 program
-  .command('add [name]')
+  .command('add <name>')
   .description('Add a new proxy')
   .action(function(name, options){
-  	//Ask details using inquirer
-    console.log('Adding new proxy to file', name);
+  	
   });
 
+//Start parsing the argument
 program.parse(process.argv);
+
+if (!program.args.length) program.help();
+
+function loadConfig() {
+	try{
+		config.load();	
+	} catch(e) {
+		console.log("Config file not found");
+		process.exit();
+	}
+}
