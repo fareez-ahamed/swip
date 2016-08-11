@@ -8,6 +8,18 @@ program
   .version('0.0.1');
 
 /**
+ * List all the proxies available
+ */
+program
+  .command('ls')
+  .description('List proxies')
+  .action(function() {
+  	for (var i = 0; i < config.getProxyList().length; i++) {
+  		console.log(config.getProxyList()[i]);
+  	}
+  });
+
+/**
  *	Add a new proxy by giving a name
  */
 program

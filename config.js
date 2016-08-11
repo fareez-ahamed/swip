@@ -19,7 +19,7 @@ module.exports = {
 	},
 
 	getProxyList : function() {
-		return this.configObj.proxies.keys();
+		return Object.keys(this.configObj.proxies);
 	},
 
 	setProxy : function(name, object) {
