@@ -32,6 +32,17 @@ program
     });
   });
 
+program
+  .command('*')
+  .action(function(cmd) {
+      if(config.hasProxy(cmd)) {
+        config.activateProxy(cmd); 
+      }
+      else {
+        console.log('No proxy found with that name');
+      }
+  });
+
 //Start parsing the argument
 program.parse(process.argv);
 
