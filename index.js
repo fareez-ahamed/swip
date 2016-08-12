@@ -20,7 +20,7 @@ program
   });
 
 /**
- *	Add a new proxy by giving a name
+ *	swip add <name> - Add a new proxy by giving a name
  */
 program
   .command('add <name>')
@@ -32,6 +32,20 @@ program
     });
   });
 
+/**
+ * swip none - Sets the proxies to default
+ */
+program
+  .command('none')
+  .description('Sets the proxies to default')
+  .action(function() {
+    config.deactivateProxy();
+  });
+
+
+/**
+ * swip <proxy-name> - Switches to that proxy
+ */
 program
   .command('*')
   .action(function(cmd) {

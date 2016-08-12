@@ -77,7 +77,7 @@ module.exports = {
 	    });
 
 	    exec('npm config rm https-proxy',function(error, stdout, stderr) {
-	    	console.log('Deactivated NPM HTTP Proxy');
+	    	console.log('Deactivated NPM HTTPS Proxy');
 	    });
 	}
 	
