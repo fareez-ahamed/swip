@@ -7,6 +7,10 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "swip": "index.js"
+  },
+  "preferGlobal": "true",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fareez-ahamed/swip.git"
