@@ -26,3 +26,5 @@ swip ls
 ```
 swip <name>
 ```
+
+Tested in Windows 7 only
